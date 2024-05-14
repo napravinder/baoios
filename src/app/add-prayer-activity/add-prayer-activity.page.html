@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Prayer Activity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form >
+    <ion-item lines="full">
+      <ion-label position="floating">Select Date*</ion-label>
+      <ion-input [(ngModel)]="postData.cdate" name="cdate" type="date" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Activity Name*</ion-label>
+      <ion-input type="text" [(ngModel)]="postData.name" name="name" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Total Time (in min)*</ion-label>
+      <ion-input [(ngModel)]="postData.totalTime" name="totalTime" type="number" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Util Used*</ion-label>
+      <ion-input [(ngModel)]="postData.untilUsed" name="untilUsed" type="text" required></ion-input>
+    </ion-item>
+    <ion-row >
+      
+      <ion-col style="background: rgb(245, 245, 245);">
+      <p >Add schdule</p>
+      <ion-list>
+        <ion-item *ngFor="let item of sch; let i = index"  >
+         
+          <ion-label>
+            <h3 size="smaller">{{item.taskname}}</h3>
+            <p><span>Task Time:</span><b>{{item.tasktime}}</b></p>
+          </ion-label>
+          <ion-icon name="close-circle" (click)="remove(i)"></ion-icon>
+          <ion-icon  slot="end"></ion-icon>
+        </ion-item>
+        </ion-list>
+      <p style="text-align: center;" (click)="addSchdule()">
+        <img src="assets/plus.svg" style="width: 40px;">
+      </p>
+      
+      </ion-col>
+      </ion-row>
+      <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" (click)="saveData()" expand="block">Save</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

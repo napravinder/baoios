@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Log Book</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-grid class="ion-margin">
+    <ion-row>
+      <ion-col>Student Details</ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col>Student Name</ion-col>
+      <ion-col>{{name}}</ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col>Gender</ion-col>
+      <ion-col>{{gender}}</ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col>Class</ion-col>
+      <ion-col>{{classname}}</ion-col>
+    </ion-row>
+    <ion-row >
+      <ion-col>Address</ion-col>
+      <ion-col>{{address}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button expand="block" type="ios" size="small" (click)="viewAcivity()">VIEW ACTIVITY DETAILS</ion-button>
+
+  
+</ion-content>

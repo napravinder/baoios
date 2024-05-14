@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Class:{{className}}</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of activity" button style="background:red">
+      <ion-thumbnail slot="start"   (click)="lessonDetail(item.id)">
+
+        <a *ngIf="item.isNew===1" href="">New <i></i></a>
+        <img  src="https://baobabsports.com/baosport/activityimages/{{item.image.split(',', 1)}}">
+      
+      </ion-thumbnail>
+      <ion-label  (click)="lessonDetail(item.id)">
+        <h3 size="smaller">{{item.activityName}}</h3>
+        <p>{{item.lessonName}}</p>
+      </ion-label>
+    
+  
+        <ion-button vertical="bottom" horizontal="end" color="{{item.color}}" slot="end" style="z-index: 9999;"   (click)="lessonStatus($event,item.id,item.activityTStatus)" >{{item.activityTStatus}}</ion-button>
+      
+      <ion-icon  slot="end"></ion-icon>
+    </ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Log Book</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col
+      size="6"
+      class=""
+      button  *ngFor="let item of logbook_date;let i = index" (click)="logDetail(item.id)"
+    >
+    <ion-card class="no-padding card" style="min-height:170px" >
+      <img  src="https://baobabsports.com/baosport/activityimages/{{item.image.split(',')[0]}}" class="img-card" >
+      
+      <ion-card-header style="padding:4px">
+        <ion-card-subtitle class="text-10 title1"><span><ion-icon name="calendar" style="padding-top: 3px;"></ion-icon> {{item.cdate}}</span></ion-card-subtitle>
+        <ion-card-title class="text-12">{{item.activityName}}</ion-card-title>
+      </ion-card-header>
+    
+    </ion-card>
+   
+    </ion-col>
+  </ion-row>
+  
+</ion-content>

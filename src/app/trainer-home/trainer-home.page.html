@@ -1,0 +1,373 @@
+<ion-content [fullscreen]="true">
+
+  <ion-grid [ngStyle]="{'background-color':topColor}" style="position:fixed;z-index: 9999;width: 100%;height:270px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  ">
+    <ion-toolbar [ngStyle]="{'background-color':'#f0f8ff00'}" color="primary1">
+      <ion-buttons slot="start">
+        <ion-menu-button menu="first" color="dark"></ion-menu-button>
+      </ion-buttons>
+      <div>
+
+        <ion-item lines="none" no-lines color="primary1">
+          <ion-button style="    position: absolute;
+          right: 0;" id="open-modal" expand="block">Attendance</ion-button>
+          <!--           
+          <ion-label no-lines ><b style="color:white;font-size: 14px;"> {{trainerName}}</b>
+    <br> 
+           
+            <small style="color:white;text-overflow: ellipsis; font-size: 10px;">{{trainerAddress}}</small>
+          </ion-label> -->
+          
+        </ion-item>
+        
+      </div>
+
+
+    </ion-toolbar>
+
+    <ion-row>
+      <ion-col size="4">
+        <img (click)="selectImageSource()" src="{{trainerImage}}" style="width:80px; height:80px;margin-left:20px; border-radius:100%; border: 5px solid #E16671;
+        padding: 3px;">
+      </ion-col>
+      <ion-col>
+        <h1 style="margin-top: 15px;font-weight: 900; margin-bottom: 2px;">{{trainerName}}</h1>
+        <span style="margin-left: 5%;color: #64666a;">{{trainerAddress}}</span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+
+      <ion-col size="1"></ion-col>
+      <ion-col size="2" style="text-align: center;" class="{{bad}}  ">
+        <img class="image-round text-center" src="assets/sad.svg" class="icon">
+        <p class="p">Bad</p>
+      </ion-col>
+      <ion-col size="2" style="text-align: center;" class="{{ok}}">
+        <img class="image-round text-center" src="assets/ok.svg" class="icon">
+        <p class="p">Ok</p>
+
+      </ion-col>
+      <ion-col size="2" style="text-align: center;" class="{{good}}">
+        <img class="image-round text-center" src="assets/confused.svg" class="icon">
+        <p class="p">Good</p>
+      </ion-col>
+      <ion-col size="2" style="text-align: center;" class="{{verygood}}">
+        <img class="image-round text-center" src="assets/smile.svg" class="icon">
+        <p class="p">Very Good</p>
+      </ion-col>
+      <ion-col size="2" style="text-align: center;" class="{{excellent}}">
+        <img class="image-round text-center" src="assets/happy.svg" class="icon">
+        <p class="p">Excellent</p>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-grid style="margin-top:280px;">
+    <ion-row>
+      <ion-col size="12">
+        <div>
+          
+        <span  class="icon-head" style="float:left;">Daily Tasks</span>
+        <div style="width:50px;float:right; height:50px;border-radius:50%;
+         background-color:#33919A;padding: 12px;margin-top: -15px;">
+<a ion-button href="https://api.whatsapp.com/send?phone==+917270836000">
+          <ion-icon style="color:white;font-size:25px" name="logo-whatsapp"></ion-icon>
+         
+        </a>
+        </div>
+
+        </div>
+
+      </ion-col>
+      <ion-col size="12" style="background-color:#FFF9EB">
+        <ion-item lines="none" no-lines (click)="curriculum()">
+          <ion-avatar slot="start" style="width:50px;float:right; height:50px;border-radius:50%;
+          background-color:#E26770;padding: 12px; ">
+            <ion-icon style="color:white;font-size:25px" name="alarm-outline" ></ion-icon>
+         
+          </ion-avatar>
+          <ion-label>
+            <h3 size="smaller" style="font-weight: 900">My Curriculum</h3>
+            <p>Curriculum</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none" no-lines (click)="logBook()">
+          <ion-avatar slot="start" style="width:50px;float:right; height:50px;border-radius:50%;
+          background-color:#FBBC7E;padding: 12px; ">
+            <ion-icon style="color:white;font-size:25px" name="accessibility-outline"></ion-icon>
+
+
+          </ion-avatar>
+          <ion-label>
+            <h3 size="smaller" style="font-weight: 900">Today Activities</h3>
+            <p>Your activities</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none" no-lines (click)="newsBoard()">
+          <ion-avatar slot="start" style="width:50px;float:right; height:50px;border-radius:50%;
+          background-color:#8CF192;padding: 12px; ">
+            <ion-icon style="color:white;font-size:25px" name="newspaper-outline"></ion-icon>
+
+          </ion-avatar>
+          <ion-label>
+            <h3 size="smaller" style="font-weight: 900">School News Board</h3>
+            <p>News</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none" no-lines (click)="upcomingEvent()">
+          <ion-avatar slot="start" style="width:50px;float:right; height:50px;border-radius:50%;
+          background-color:#6488E5;padding: 12px; ">
+            <ion-icon style="color:white;font-size:25px" name="podium-outline"></ion-icon>
+
+          </ion-avatar>
+          <ion-label>
+            <h3 size="smaller" style="font-weight: 900">Upcoming Events</h3>
+            <p>New Event</p>
+          </ion-label>
+        </ion-item>
+        <ion-item lines="none" no-lines (click)="gallery()">
+          <ion-avatar slot="start" style="width:50px;float:right; height:50px;border-radius:50%;
+          background-color:#996a04;padding: 12px; ">
+            <ion-icon style="color:white;font-size:25px" name="cloud-upload-outline" ></ion-icon>
+          </ion-avatar>
+          <ion-label>
+            <h3 size="smaller" style="font-weight: 900">Upload Images</h3>
+            <p>Images</p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+
+  <!-- <ion-grid class="main-icon" [ngStyle]="{'background-color':eventColor}">
+
+
+    <ion-row>
+      <ion-col size="12">
+        <span class="icon-head">Upcoming Events</span>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+
+
+        <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
+          <ion-slide *ngFor="let card of upcomingcard" button (click)="eventDetail(card.id,card.type)"
+            style="background-image: linear-gradient(to left bottom ,#F05D00 , #F28801);width: 120px; height: 150px; margin:3px;border-radius: 25px;">
+            <ion-col >
+              <div style="background:white; border-radius: 25px;width:100%;height:100px;padding: 9px;">
+                
+                  <ion-img *ngIf="event" style="pointer-events:none;width: 100%;height: 100%;"
+                  src="https://baobabsports.com/baosport/eventimages/{{card.images.split(',', 1)}}">
+                </ion-img>
+                <ion-img *ngIf="my" style="pointer-events:none;width: 100%; height: 100%" src="{{card.images.split(',', 1)}}"></ion-img>
+
+              </div>
+              <ion-label class="c-head">{{ card.title?.substring(1,20) }}..</ion-label>
+              <br>
+              <span class="date">{{card.date}}</span>
+
+            </ion-col>
+          </ion-slide>
+        </ion-slides>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+  <ion-grid class="main-icon" [ngStyle]="{'background-color':activityColor}">
+    <ion-row>
+      <ion-col size="12">
+        <span class="icon-head"> Trainer Activity</span>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+
+      <ion-col class="g" size="5"
+        style="background-image: linear-gradient(to left bottom, rgb(228, 100, 113), rgb(238 175 181));  border-bottom: 5px solid rgb(255 205 0)">
+        <div (click)="addprayer()" class="icon-div">
+          <img src="assets/tracking.svg" class='icon-size'>
+        </div>
+        <div class="icon-title ion-text-center ion-text-nowrap">Prayer Activity</div>
+      </ion-col>
+      <ion-col class="g" size="5"
+        style="background-image:linear-gradient(to left bottom, #F9BE7C, #F9BE7C); border-bottom: 5px solid rgb(74 195 237);">
+        <div (click)="training()" class="icon-div">
+          <img src="assets/teaching.svg" class='icon-size'>
+        </div>
+        <div class="icon-title ion-text-center ion-text-nowrap">Training Session</div>
+      </ion-col>
+      
+      <ion-col class="g" size="5"
+        style="background-image:linear-gradient(to left bottom, #6D83DF, #6D83DF);     border-bottom: 5px solid rgb(248 196 96);">
+        <div (click)="playAtHome()" class="icon-div">
+          <img src="assets/play.png" style="width:60%!important" class='icon-size'>
+        </div>
+        <div class="icon-title ion-text-center ion-text-nowrap">Play at Home</div>
+      </ion-col>
+      <ion-col class="g" size="5"
+        style="background-image: linear-gradient(to left bottom, rgb(69 189 196), rgb(111 237 244));border-bottom: 5px solid #f63511;">
+        <div (click)="timetable()" class="icon-div">
+          <img src="assets/schedule.svg" class='icon-size'>
+        </div>
+        <div class="icon-title ion-text-center ion-text-nowrap">Add Time Table</div>
+      </ion-col>
+      
+      <ion-col class="g" size="5"
+        style="background-image:linear-gradient(to left bottom, rgb(228, 100, 113), rgb(238 175 181));     border-bottom: 5px solid rgb(248 196 96);">
+        <div (click)="addnewStudent()" class="icon-div">
+          <img src="assets/add-friend.svg" class='icon-size'>
+        </div>
+        <div class="icon-title ion-text-center ion-text-nowrap">Add new Student</div>
+      </ion-col>
+      
+      <ion-col class="g" size="5"
+        style="background-image:linear-gradient(to left bottom, rgb(133 109 226), rgb(163 116 206));  border-bottom: 5px solid rgb(255 205 0)">
+        <div (click)="addActivity()" class="icon-div">
+          <img src="assets/add-file.svg" class='icon-size'>
+        </div>
+        <div class="icon-title ion-text-center ion-text-nowrap">Add New Activity</div>
+      </ion-col>
+      
+      <ion-col class="g" size="5"
+        style="background-image:linear-gradient(to left bottom, #6D83DF, #6D83DF);     border-bottom: 5px solid rgb(248 196 96);">
+        <div (click)="addAssessment()" class="icon-div">
+          <img src="assets/checklist.svg" class='icon-size'>
+        </div>
+        <div class="icon-title ion-text-center ion-text-nowrap">Add Assessment</div>
+      </ion-col>
+
+      <ion-col class="g" size="5"
+        style="background-image: linear-gradient(to left bottom, rgb(69 189 196), rgb(111 237 244));border-bottom: 5px solid #f63511;">
+        <div (click)="fitnessfun()" class="icon-div">
+          <img src="assets/dumbbell.svg" class='icon-size'>
+        </div>
+        <div class="icon-title ion-text-center ion-text-nowrap">Food and Nutrition </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="skill-icon" [ngStyle]="{'background-color':workColor}">
+    
+    <ion-row>
+
+<!-- 
+      <ion-col class="g" size="5"
+        style="background-image:linear-gradient(to left bottom,  #F9BE7C, #F9BE7C);     border-bottom: 5px solid rgb(74 195 237);">
+        <div (click)="addEvent()" class="icon-div">
+          <img src="assets/event.svg" class='icon-size'>
+        </div>
+        <div class="icon-title ion-text-center ion-text-nowrap">Add Event</div>
+      </ion-col> -->
+
+
+
+
+
+      <!-- 
+      <ion-col class="g" size="5">
+        <div (click)="addprayer()" style="text-align: center;">
+          <img src="assets/.svg" class='icon-size'>
+          <br>
+        
+        </div>
+      </ion-col>
+      <ion-col class="g" size="5">
+        <div (click)="curriculum()" style="text-align: center;">
+          <img src="assets/resume.svg" class='icon-size'>
+          <br>
+          <div class="icon-title ion-text-center ion-text-nowrap">Curriculum </div>
+        </div>
+      </ion-col>
+      <ion-col class="g" size="5" style="text-align: center;">
+        <div (click)="training()">
+          <img src="assets/teaching.svg" class='icon-size'>
+          <br>
+          <div class="icon-title ion-text-center ion-text-nowrap">Training Session </div>
+        </div>
+      </ion-col>
+
+
+
+    </ion-row>
+
+  </ion-grid>
+  <ion-grid class="skill-icon" [ngStyle]="{'background-color':workColor}">
+    <ion-row>
+      <ion-col size="12">
+        <span class="icon-head">Trainer Daily Work</span>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col class="g" size="5">
+        <div (click)="playAtHome()" style="text-align: center;">
+          <img src="assets/schedule.svg" class='icon-size'>
+          <br>
+          <div class="icon-title ion-text-center ion-text-nowrap">Play At Home </div>
+        </div>
+      </ion-col>
+      <ion-col class="g" size="5" >
+        <div (click)="logBook()" style="text-align: center;">
+          <img src="assets/logs.svg" class='icon-size'>
+          <br>
+          <div class="icon-title ion-text-center ion-text-nowrap">Log Book </div>
+        </div>
+
+      </ion-col>
+      <ion-col class="g" size="5">
+        <div (click)="addnewStudent()" style="text-align: center;">
+          <img src="assets/add-friend.svg" class='icon-size'>
+          <br>
+          <div class="icon-title ion-text-center ion-text-nowrap">Add new Student</div>
+        </div>
+      </ion-col>
+      <ion-col class="g" size="5">
+        <div (click)="gallery()" style="text-align: center;">
+          <img src="assets/image.svg" class='icon-size'>
+          <br>
+          <div class="icon-title ion-text-center ion-text-nowrap">Add Images </div>
+        </div>
+      </ion-col>
+ -->
+
+
+ 
+ <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+   <ng-template>
+     <ion-header>
+       <ion-toolbar>
+         <ion-buttons slot="start">
+           <ion-button (click)="cancel()">Cancel</ion-button>
+         </ion-buttons>
+         <ion-title>Today Attendance</ion-title>
+         <ion-buttons slot="end">
+           <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+         </ion-buttons>
+       </ion-toolbar>
+     </ion-header>
+     <ion-content class="ion-padding">
+      <ion-item>
+        
+        <ion-select placeholder="Type" [(ngModel)]="atype">
+          <ion-select-option value="Yes">Yes</ion-select-option>
+          <ion-select-option value="No">No</ion-select-option>
+        </ion-select>
+      </ion-item>
+       <ion-item>
+         <ion-label position="stacked">Reason</ion-label>
+         <ion-input type="text" placeholder="Reason" [(ngModel)]="res"></ion-input>
+       </ion-item>
+     </ion-content>
+   </ng-template>
+ </ion-modal>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

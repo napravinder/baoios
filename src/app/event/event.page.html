@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of view_user_events; let i = index;"  >
+      <ion-thumbnail slot="start"  >
+        <img  src="{{item.eventImages.split(',', 1)}}">
+      </ion-thumbnail>
+      <ion-label button (click)="eventDetail(item.id,'event')">
+        <h3 size="smaller">{{item.eventName}}</h3>
+        <p>{{item.eventDate}}</p>
+      </ion-label>
+      <ion-icon  slot="end"></ion-icon>
+      <ion-fab  vertical="bottom" horizontal="end">
+        <ion-fab-button style="width: 20px; height:20px;z-index: 9999;"
+          color="danger"
+          size="small"
+          (click)="deleteEvent(item.id, i)"
+        >
+          <ion-icon style="width: 10px; "  name="trash-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    </ion-item>
+
+    </ion-list>
+</ion-content>
+<ion-footer no-shadow>
+	<ion-toolbar position="bottom">
+    <ion-button expand="block" style="font-size: 12px;" (click)="addEvent()">Add new event</ion-button>
+	</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Activities</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+  <ion-list>
+    <ion-item *ngFor="let item of view_user_activity; let i = index;"  >
+      <ion-thumbnail slot="start"  >
+        <img  src="https://baobabsports.com/baosport/activityimages/{{item.image.split(',', 1)}}">
+      </ion-thumbnail>
+      <ion-label button (click)="activityDetail(item.id)">
+        <h3 size="smaller">{{item.activityName}}</h3>
+        <p>{{item.created}}</p>
+      </ion-label>
+     
+      <ion-badge color="{{color}}" slot="end">{{status}}</ion-badge>
+    </ion-item>
+
+    </ion-list>
+</ion-content>
+<ion-footer no-shadow>
+	<ion-toolbar position="bottom">
+    <ion-button expand="block" style="font-size: 12px;" (click)="addActivity()">Add new Activity</ion-button>
+	</ion-toolbar>
+</ion-footer>

@@ -1,0 +1,7 @@
+{
+    "access_token": "95c135718db3d82c3d71fd81eb1636310b4fd1737319b801fab11e2ac72ffcea",
+    "token_type": "Bearer",
+    "expires_in": 7200,
+    "scope": "read_biller_categories read_billers read_regions read_bills create_transactions read_transactions read_plans register_complain check_complain_status read_operators read_circles read_operator_circle read_packs read_agent_balance",
+    "created_at": 1626101180
+}

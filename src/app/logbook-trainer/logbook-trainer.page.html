@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Log Book</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ 
+    <ion-item>
+      <ion-label>Class</ion-label>
+      <ion-select placeholder="Select" [(ngModel)]="class_id"   (ionChange)="getActivity()">
+        <ion-select-option *ngFor="let item of curriculum_classes" value="{{item.id}}">{{item.className}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+  
+  <ion-item class="mt">
+    <ion-label>Activity</ion-label>
+    <ion-select placeholder="Select" [(ngModel)]="activity_id">
+      <ion-select-option *ngFor="let item of activity" value="{{item.id}}">{{item.activityName}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-card>
+    <ion-card-content style="padding: 0px;">
+    <ion-list>
+    <ion-item class="mt">
+      <ion-label ><span style="font-size: 10px;float: left;">Student Name</span>
+         <span style="font-size: 10px;float: right;">Gender</span></ion-label>
+
+      <ion-checkbox slot="start" 
+      [(ngModel)]="masterCheck"
+      [indeterminate]="isIndeterminate"
+        (click)="checkMaster()"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item *ngFor="let item of view_students">
+
+      <ion-label ><span style="font-size: 10px;float: left;">{{item.studentName}}</span> 
+        <span style="font-size: 10px;float: right;">{{item.gender}}</span></ion-label>
+      <ion-checkbox slot="start" 
+      [(ngModel)]="item.isChecked" 
+      (ionChange)="checkEvent()"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-button class="mt" (click)="saveData()" expand="block">SUBMIT</ion-button>
+</ion-card-content>
+</ion-card>
+</ion-content>

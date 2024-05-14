@@ -1,0 +1,28 @@
+<ion-header>  
+  <ion-toolbar>  
+    <ion-title>Logbook</ion-title>  
+    <ion-icon name='close-circle' (click)='dismiss()' style='float: right;'></ion-icon>  
+  </ion-toolbar>  
+</ion-header>  
+  
+<ion-content>  
+  
+  <ion-item>
+    <ion-label>Select Class</ion-label>
+    <ion-select placeholder="Select"  [(ngModel)]="class_id" (ionChange)="getStu()">
+      <ion-select-option *ngFor="let item of className" value="{{item.id}}">{{item.className}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Select Student</ion-label>
+    <ion-select placeholder="Select"    [(ngModel)]="student_id" (ionChange)="getDate()">
+      <ion-select-option *ngFor="let item of student" value="{{item.id}}">{{item.studentName}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Select date</ion-label>
+    <ion-select placeholder="Select"   [(ngModel)]="log_id" (ionChange)="getData()">
+      <ion-select-option  *ngFor="let item of dates" value="{{item.id}}">{{item.cdate}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-content>  

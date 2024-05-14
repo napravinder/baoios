@@ -1,0 +1,19 @@
+ion-content {
+    --background: transparent;
+}
+ 
+ion-footer {
+    margin-bottom: 10px;
+}
+ 
+ion-slides {
+    height: 100%;
+}
+/* CSS style for zoomable images */
+.swiper-zoomable-image {
+    width: 100%; /* or any other desired width */
+    height: auto; /* or any other desired height */
+    object-fit: contain; /* or other desired object-fit value */
+    cursor: pointer; /* optional: add cursor style for zoomable images */
+  }
+  

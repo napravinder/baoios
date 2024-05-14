@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Add Assessment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ 
+    
+    <ion-card-content style="padding: 0px;">
+      <ion-item>
+        <ion-label>Class</ion-label>
+        <ion-select placeholder="Select" [(ngModel)]="class_id"   (ionChange)="getActivity()">
+          <ion-select-option *ngFor="let item of curriculum_classes" value="{{item.id}}">{{item.className}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    
+    
+    <ion-item class="mt">
+      <ion-label>Select Type</ion-label>
+      <ion-select placeholder="Select" >
+        <ion-select-option  value="Fitness">Fitness</ion-select-option>
+        <ion-select-option  value="Skill">Skill</ion-select-option>
+      </ion-select>
+    </ion-item>
+  <ion-button class="mt"  expand="block">Continue</ion-button>
+</ion-card-content>
+</ion-content>

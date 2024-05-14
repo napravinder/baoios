@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Add event</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item lines="full">
+    <ion-label position="floating">Event Name*</ion-label>
+    <ion-input type="text" [(ngModel)]="postData.event_name" name="name" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating">Date*</ion-label>
+    <ion-input type="date" [(ngModel)]="postData.event_date" name="date" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating">Time*</ion-label>
+    <ion-input type="time" [(ngModel)]="postData.event_time" name="time" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating">Event Details*</ion-label>
+    <ion-textarea [(ngModel)]="postData.event_details" name="event_details" required></ion-textarea>
+  </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-button type="button" color="success" (click)="selectImageSource()" expand="block">Upload Image</ion-button>
+      
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="success" (click)="saveData()" expand="block">Add</ion-button>
+      
+    </ion-col>
+  </ion-row>
+</ion-content>

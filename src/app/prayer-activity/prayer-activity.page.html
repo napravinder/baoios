@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Prayer Activity</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of prayer" button (click)="funDetail(item.id,item.untilUsed,item.schedule)">
+      
+      <ion-label>
+        <h3 size="smaller">{{item.name}}</h3>
+        <p>{{item.cdate}}</p>
+        <span class="time">Time :{{item.totalTime}} Min</span>
+      </ion-label>
+      <ion-icon  slot="end"></ion-icon>
+    </ion-item>
+    </ion-list>
+</ion-content>

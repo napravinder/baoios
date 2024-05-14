@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Log Activity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="slide-grid">
+    <ion-row>
+      <ion-col size="12">
+        <div class="swiper-container">
+          <div class="swiper-wrapper" >
+            <div class="swiper-slide"  *ngFor="let s of sliderOne.slidesItems">
+              <img height="200px" width="100%" src="{{s.photo}}">
+            </div>
+           
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+       
+
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <h1>{{activityName}}</h1>
+        <span class="lable">Class:</span><span class="names">{{className}}</span><br>
+        <span class="lable">Lesson:</span><span class="names">{{lessonName}}</span><br>
+        <span class="lable">Time:</span><span class="names">{{activityTime}}</span><br>
+      </ion-col>
+    </ion-row>
+ 
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" class="btn-d" (click)="toggleShow()">
+    
+          Lesson Intro
+        </ion-button>
+        <div class="activityDetail" *ngIf="isShown">
+          <h4>Lesson Intro</h4>
+            {{lessonIntro}}
+        </div>
+
+        <ion-button expand="full" class="btn-d" (click)="videoshow()">
+    
+          Video
+        </ion-button>
+        <div class="activityDetail" *ngIf="videoShown">
+          <ion-list>
+            <ion-item *ngFor="let item of video" button (click)="playVideo(item.video)">
+              <ion-thumbnail slot="start" >
+                <img src="assets/play.svg">
+              </ion-thumbnail>
+              <ion-label>
+                <h3 size="smaller">Play video</h3>
+               
+              </ion-label>
+              <ion-icon  slot="end"></ion-icon>
+            </ion-item>
+            </ion-list>
+        </div>
+        <ion-button expand="full" class="btn-d" (click)="lessonIntroshow()">
+    
+          Activity Detail
+        </ion-button>
+        <div class="activityDetail" *ngIf="lessonIntroShown">
+          <h4>Activity Detail</h4>
+           
+            <div [innerHTML]=activityDetail></div>
+        </div>
+        <ion-button expand="full" class="btn-d" (click)="safetyshow()">
+    
+          Safety
+        </ion-button>
+        <div class="activityDetail" *ngIf="safetyShown">
+          <h4>Safety</h4>
+
+            <div [innerHTML]=safety></div>
+        </div>
+        <ion-button expand="full" class="btn-d" (click)="activityBenefitsshow()">
+          Benefits
+        </ion-button>
+        <div class="activityDetail" *ngIf="activityBenefitsShown">
+          <h4>Benefits</h4>
+          <div [innerHTML]=activityBenefits></div>
+         
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

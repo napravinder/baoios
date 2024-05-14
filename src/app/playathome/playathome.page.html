@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Play At Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col
+      size="6"
+      class=""
+      *ngFor="let item of listItems" button (click)="lessonDetail(item.id)"
+    >
+    <ion-card class="no-padding card" (click)="lessonDetail(item.id)">
+      <img  src="https://baobabsports.com/baosport/activityimages/{{item.image.split(',', 1)}}" class="img-card" >
+      
+      <ion-card-header>
+        <ion-card-subtitle class="text-10 title1"> {{item.created}}  <ion-button class="text-10 " horizontal="end" color="info"      >{{item.addedby}}</ion-button></ion-card-subtitle>
+        <ion-card-title class="text-12">{{item.activityName}}</ion-card-title>
+     
+
+       
+      </ion-card-header>
+    
+    </ion-card>
+   
+    </ion-col>
+  </ion-row>
+ <!-- <ion-list>
+  <ion-item *ngFor="let item of listItems" button (click)="lessonDetail(item.id)">
+    <ion-thumbnail slot="start" >
+      <img  src="https://baobabsports.com/baosport/activityimages/{{item.image.split(',', 1)}}">
+    </ion-thumbnail>
+    <ion-label>
+      <h3 size="smaller">{{item.activityName}}</h3>
+      <p>{{item.created}}</p>
+      <span>{{item.addedby}}</span>
+    </ion-label>
+    <ion-icon  slot="end"></ion-icon>
+  </ion-item>
+  </ion-list> -->
+</ion-content>

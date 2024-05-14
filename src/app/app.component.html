@@ -1,0 +1,38 @@
+<ion-app>
+  <ion-menu  side="start" menuId="first" auto-hide="true" swipeEnabled="false" contentId="main">
+    <ion-header  style="background-color: #F9BE7C!important;padding-top:0px;height:200px">
+      <ion-toolbar >
+        <div style="background-color: #F9BE7C!important;">
+          <ion-item lines="none" no-lines color="primary1">
+            
+            <ion-avatar slot="start">
+              <img src="{{pimage}}">
+            </ion-avatar>
+          
+          </ion-item> 
+          <ion-item lines="none" no-lines color="primary1">
+            <ion-label style="color:black;font-weight: bolder;">
+              {{username}}
+             <h3 style="color:rgb(48, 48, 48);font-size:12px;margin-top:3px;">{{fname}}</h3>
+             
+            </ion-label>
+          </ion-item>
+        </div>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content style="background-color: #F9BE7C!important;">
+      <ion-list>
+     
+        <ion-item (click)="openurl('https://baobabrise.com/')"> Join Us </ion-item>
+        <ion-item (click)="openurl('https://baobabrise.com/')">Help & Support</ion-item>
+        <ion-item (click)=noti() *ngIf="chckuser">Notifications</ion-item>
+        <ion-item (click)="openurl('https://baobabrise.com/about/')">About Us</ion-item>
+        <ion-item (click)="logoutapp()">Logout</ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  
+  
+ 
+  <ion-router-outlet id="main" [swipeGesture]="false"></ion-router-outlet>
+</ion-app>

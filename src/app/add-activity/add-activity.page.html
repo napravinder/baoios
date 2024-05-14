@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Add Activity</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label class="font-12">Class</ion-label>
+    <ion-select placeholder="Select" [(ngModel)]="postData.classID"   (ionChange)="getLesson()">
+      <ion-select-option *ngFor="let item of className" value="{{item.id}}">{{item.className}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item class="mt">
+    <ion-label class="font-12">Lesson</ion-label>
+    <ion-select placeholder="Select" [(ngModel)]="postData.lessonID" (ionChange)="getlevelName()">
+      <ion-select-option *ngFor="let item of lessonName; let i = index" value="{{item.id}}">{{i+1}}.<span>({{item.month}})</span>{{item.lessonName}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item class="mt">
+    <ion-label class="font-12">Grade Level</ion-label>
+    <ion-select placeholder="Select" [(ngModel)]="postData.grouplevelID" (ionChange)="getData()">
+      <ion-select-option *ngFor="let item of levelName" value="{{item.id}}">{{item.levelName}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item class="mt">
+    <ion-label class="font-12">Age Group</ion-label>
+    <ion-select placeholder="Select" [(ngModel)]="postData.agegroupID" >
+      <ion-select-option *ngFor="let item of age_groups" value="{{item.id}}">{{item.groupName}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Lesson Code </ion-label>
+    <ion-input type="text" [(ngModel)]="postData.lessonCode" name="lesson_code" value="{{lesson_code}}" required></ion-input>
+  </ion-item>
+  <ion-item class="mt">
+    <ion-label class="font-12" class="font-12">Month</ion-label>
+    <ion-select placeholder="Select" [(ngModel)]="postData.month" >
+      <ion-select-option value="Apr">Apr</ion-select-option>
+      <ion-select-option value="May">May</ion-select-option>
+      <ion-select-option value="Jun">Jun</ion-select-option>
+      <ion-select-option value="Jul">Jul</ion-select-option>
+      <ion-select-option value="Aug">Aug</ion-select-option>
+      <ion-select-option value="Sept">Sept</ion-select-option>
+      <ion-select-option value="Oct">Oct</ion-select-option>
+      <ion-select-option value="Nov">Nov</ion-select-option>
+      <ion-select-option value="Dec">Dec</ion-select-option>
+      <ion-select-option value="Jan">Jan</ion-select-option>
+      <ion-select-option value="Feb">Feb</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+  <h5 style="text-align: center;">Activity Details</h5>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Activity Name*</ion-label>
+    <ion-input type="text" [(ngModel)]="postData.activityName" name="activityName" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Lesson Intro*</ion-label>
+    <ion-input type="text" [(ngModel)]="postData.lessonIntro" name="lessonIntro" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Unit Used*</ion-label>
+    <ion-input type="text" [(ngModel)]="postData.unitUsed" name="untilUsed" required></ion-input>
+  </ion-item>
+  <h5 style="text-align: center;">Skill Development</h5>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Warm Up*</ion-label>
+    <ion-input type="text" [(ngModel)]="postData.warmup" name="warmup" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Activity Detail*</ion-label>
+    <ion-input type="text" [(ngModel)]="postData.activityDetail" name="activityDetail" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Activity Time*</ion-label>
+    <ion-input type="text" [(ngModel)]="postData.activityTime" name="activityTime" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Activity Benefits*</ion-label>
+    <ion-input type="text" [(ngModel)]="postData.activityBenefits" name="activityBenefits" required></ion-input>
+  
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Cool Down*</ion-label>
+    <ion-input type="text" [(ngModel)]="postData.coolDown" name="coolDown" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Home Work*</ion-label>
+    <ion-input type="text" [(ngModel)]="postData.homeWork" name="homeWork" required></ion-input>
+  </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="success" (click)="selectImageSource()" expand="block">Upload Image</ion-button>
+      
+    </ion-col>
+  </ion-row>
+  <ion-item lines="full">
+    <ion-label class="font-12" position="floating">Video Link*</ion-label>
+    
+    <ion-input type="text" [(ngModel)]="postData.video" name="video" required></ion-input>
+  </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="success" (click)="saveData()" expand="block">Add Activity</ion-button>
+      
+    </ion-col>
+  </ion-row>
+</ion-content>

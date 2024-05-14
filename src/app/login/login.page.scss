@@ -1,0 +1,283 @@
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+input.rounded {
+  border: 1px ;
+  flex-grow: 1;
+
+  background: #fff;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 32px;
+	-moz-box-shadow: 2px 2px 3px rgb(187, 185, 185);
+	-webkit-box-shadow: 2px 2px 3px rgb(199, 197, 197);
+	box-shadow: 2px 2px 3px rgb(173, 172, 172);
+	font-size: 20px;
+	padding: 10px 10px;
+	outline: 0;
+	-webkit-appearance: none;
+  width: 87%;
+  margin-bottom:8px;
+  padding-left: 40px;
+  color:#F05D00;
+}
+input.rounded:focus {
+  border: 1px solid #F05D00;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:#F05D00;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:#F05D00;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color:#F05D00;
+}
+
+ion-content{
+
+  --ion-background-color:#F8F8F8;
+}
+.keyboard-open .tabs{
+  display:none;
+  }
+.keyboard-open .has-tabs{
+ bottom:0;
+ }
+ body.keyboard-open .has-footer{
+  bottom: 0;
+  }
+
+
+  
+  /* Keyframes */
+  @keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+ 
+
+  .button {
+    border-radius: 4px;
+    background-image: linear-gradient(to left bottom ,#F05D00 , #F28801);
+    color: white;
+    border: none;
+    text-align: center;
+    font-size: 17px;
+    padding: 14px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+  
+ 
+@keyframes animate {
+
+  0%{
+      transform: translateY(0) rotate(0deg);
+      opacity: 1;
+      border-radius: 0;
+  }
+
+  100%{
+      transform: translateY(-1000px) rotate(720deg);
+      opacity: 0;
+      border-radius: 50%;
+  }
+
+}
+
+.logo-background-color{
+  background-color: #2DD36F!important;
+}
+.bottons{
+  margin: 0px;
+  top: 5px;
+  padding: 10px;
+  padding-top:15px;
+  background: white;
+
+}
+.active-button{
+  background-image: linear-gradient(to left bottom ,#F9BE7C , #f5933a)!important;
+  color: #ffffff;
+   box-shadow: 1px 1px 10px #1E192E;
+   transition: all 500ms ease;
+   animation: wiggle 2s linear infinite;
+ 
+}
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.heading{
+  text-align: center;
+  font-size: small;
+}
+.button-native{
+border-top-left-radius:0!important;
+}
+@media only screen and (max-width: 2048px){
+.logo-title{
+  font-size:16px;
+}
+.heading{
+  font-size:16px;
+}
+.button-native{
+  width:50%;
+}
+.bottons{
+  font-size:16px;
+}
+.content{
+  margin-right:10%;
+  margin-left:10%;
+}
+}
+@media only screen and (max-width: 1200px){
+.logo-title{
+  font-size:16px;
+}
+.heading{
+  font-size:16px;
+}
+.button-native{
+  width:50%;
+}
+.bottons{
+  font-size:16px;
+}
+.content{
+  margin-right: 100px;
+  margin-left:100px;
+}
+}
+@media only screen and (max-width: 600px){
+.logo-title{
+  font-size:14px;
+}
+.heading{
+  font-size:14px;
+}
+.button-native{
+  width:100%;
+}
+.bottons{
+  font-size:14px;
+}
+.content{
+  margin-right: auto;
+  margin-left:auto;
+}
+}
+@media only screen and (max-width: 425px){
+.logo-title{
+font-size:12px;
+}
+.heading{
+font-size:12px;
+}
+.button-native{
+width: 100%
+}
+.bottons{
+font-size:12px;
+}
+.content{
+margin-right: auto;
+margin-left:auto;
+}
+}  
+.loginTypeBtn{
+margin:1%;
+width:30%; 
+display: inline-block;
+padding: 5px;
+color:white;
+border-radius: 10px;
+background: #f4852e66;
+
+}
+.loginTypeBtn>span{
+color:rgb(0, 0, 0);
+font-family: system-ui;
+font-weight: bold;  
+}
+.active-button>span{
+color:#ffffff!important;
+
+}
+body{
+  font-family: 'Exo', sans-serif;
+}
+.input-box {
+display: flex;
+align-items: center;
+width: 91%
+}
+
+
+
+.input-box .perfix{
+margin-left: 27px;
+  position: relative;
+  left: 31px;
+}

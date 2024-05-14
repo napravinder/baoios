@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">School Home Work</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>  
+  <ion-row>
+  <ion-col
+  size="6"
+  class=""
+  *ngFor="let item of food" button (click)="lessonDetail(item.id,item.images,item.title,item.cdate,item.des,item.link)"
+>
+<ion-card class="no-padding card" style="min-height:180px" >
+  <img  src="{{item.images}}" class="img-card" >
+  
+  <ion-card-header style="padding:4px">
+    <ion-card-subtitle class="text-10 title1"><span><ion-icon name="calendar" style="padding-top: 3px;"></ion-icon> {{item.cdate}}</span>  </ion-card-subtitle>
+    <ion-card-title class="text-12">{{item.title}}</ion-card-title>
+ 
+
+   
+  </ion-card-header>
+
+</ion-card>
+
+</ion-col>
+</ion-row>
+  
+</ion-content>

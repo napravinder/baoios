@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Training Session</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <p class="text-center">{{title}}</p>
+        <span>{{cdate}}</span>
+        
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <img  src="{{images}}">
+        <p [innerHTML]=des></p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="full" fill="outline" button (click)="playVideo(link)">Watch Video</ion-button>
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Trainer Time Table</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row >
+   
+      <ion-col size="12" >
+        <div class="forecast_container ">
+        <table>
+          <tr class=" row-color">
+            <td></td>
+            <td class="colnobreak" *ngFor="let var of view_time;let i = index">
+              {{view_time[i].period}}
+              <br>
+              {{view_time[i].start_time}} - {{view_time[i].end_time}}
+
+            </td>
+          </tr>
+          <tr>
+            <td class="colnobreak row-color" >
+                <i>Monday</i>
+            </td>
+            <td class="col-data" *ngFor="let var of view_time;let i = index; ">
+              <span *ngFor="let var1 of view_time_table;let j = index">
+                <span *ngIf="(view_time[i].period == view_time_table[j].period && view_time_table[j].day=='Monday')">{{view_time_table[j].shortName}}</span>
+              </span>
+              
+           </td>
+           
+          </tr>
+          <tr>
+            <td class="colnobreak row-color">
+                <i>Tuesday</i>
+            </td>
+            <td class="col-data" *ngFor="let var of view_time;let i = index; ">
+              <span *ngFor="let var1 of view_time_table;let j = index">
+                <span *ngIf="(view_time[i].period == view_time_table[j].period && view_time_table[j].day=='Tuesday')">{{view_time_table[j].shortName}}</span>
+              </span>
+              
+           </td>
+          </tr>
+          <tr>
+            <td class="colnobreak row-color">
+                <i>Wednesday</i>
+
+            </td>
+            <td class="col-data" *ngFor="let var of view_time;let i = index; ">
+              <span *ngFor="let var1 of view_time_table;let j = index">
+                <span *ngIf="(view_time[i].period == view_time_table[j].period && view_time_table[j].day=='Wednesday')">{{view_time_table[j].shortName}}</span>
+              </span>
+              
+           </td>
+          </tr>
+          <tr>
+            <td class="colnobreak row-color">
+                <i>Thuresday</i>
+            </td>
+            <td class="col-data" *ngFor="let var of view_time;let i = index; ">
+              <span *ngFor="let var1 of view_time_table;let j = index">
+                <span *ngIf="(view_time[i].period == view_time_table[j].period && view_time_table[j].day=='Thuresday')">{{view_time_table[j].shortName}}</span>
+              </span>
+              
+           </td>
+          </tr>
+          <tr>
+            <td class="colnobreak row-color">
+                <i>Friday</i>
+            </td>
+            <td class="col-data" *ngFor="let var of view_time;let i = index; ">
+              <span *ngFor="let var1 of view_time_table;let j = index">
+                <span *ngIf="(view_time[i].period == view_time_table[j].period && view_time_table[j].day=='Friday')">{{view_time_table[j].shortName}}</span>
+              </span>
+              
+           </td>
+          </tr>
+          <tr>
+            <td class="colnobreak row-color">
+                <i>Saturday</i>
+            </td>
+            <td class="col-data" *ngFor="let var of view_time;let i = index; ">
+              <span *ngFor="let var1 of view_time_table;let j = index">
+                <span *ngIf="(view_time[i].period == view_time_table[j].period && view_time_table[j].day=='Saturday')">{{view_time_table[j].shortName}}</span>
+              </span>
+              
+           </td>
+          </tr>
+        </table>
+      </div>
+        
+      </ion-col>
+    </ion-row>
+    </ion-grid>
+
+</ion-content>

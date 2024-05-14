@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Add new student</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-item>
+      <ion-label>Class</ion-label>
+      <ion-select placeholder="Select" [(ngModel)]="postData.class">
+        <ion-select-option *ngFor="let item of curriculum_classes" value="{{item.id}}">{{item.className}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Student Name*</ion-label>
+      <ion-input type="text" [(ngModel)]="postData.name" name="name" required></ion-input>
+    </ion-item>
+  
+    <ion-item lines="full">
+      <ion-label position="floating">Father Name*</ion-label>
+      <ion-input [(ngModel)]="postData.fathername" name="fathername" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Student Username*</ion-label>
+      <ion-input [(ngModel)]="postData.userid" name="userid" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Password* </ion-label>
+      <ion-input [(ngModel)]="postData.password" name="password" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">DOB (dd-mm-yyyy)*</ion-label>
+      <ion-input [(ngModel)]="postData.dob" name="dob" type="date" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Weight (feet)*</ion-label>
+      <ion-input [(ngModel)]="postData.weight" name="weight" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Height (feet)*</ion-label>
+      <ion-input [(ngModel)]="postData.height" name="height" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Section*</ion-label>
+      <ion-input [(ngModel)]="postData.section" name="section" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Age</ion-label>
+      <ion-input [(ngModel)]="postData.age" name="age" type="number" required></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-radio-group value="Male" >
+        <ion-list-header>
+          <ion-label style="font-size:10px;">Gender</ion-label>
+        </ion-list-header>
+        
+        <ion-item>
+          <ion-label>Male</ion-label>
+          <ion-radio slot="start" value="Male" (ionBlur)="postData.gender='Male'"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio slot="start" value="Female" (ionBlur)="postData.gender='Female'"></ion-radio>
+        </ion-item>
+    
+      </ion-radio-group>
+    </ion-list>
+    <ion-item lines="full">
+      <ion-label position="floating">Address*</ion-label>
+      <ion-textarea [(ngModel)]="postData.address" name="address" required></ion-textarea>
+      
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" (click)="saveData()" expand="block">Add</ion-button>
+        
+      </ion-col>
+    </ion-row>
+  
+</ion-content>

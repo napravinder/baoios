@@ -1,0 +1,18 @@
+
+
+
+<ion-content fullscreen>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide" *ngFor="let s of images" style="background-image: url('https://baobabsports.com/baosport/ios/bg/{{s}}'); background-size: cover; background-repeat: no-repeat">
+       
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+
+    <button  tabindex="3" (click)="login()" class="button next-button">
+      <span>Skip </span>
+    </button>
+    
+  </div>
+</ion-content>

@@ -1,0 +1,232 @@
+<!-- <ion-header collapse="condense" class="logo-background-color">
+  <ion-toolbar color="success"   >
+    
+    <ion-title  size="small" ><b class="logo-title"> <br> & <br></b></ion-title>
+  </ion-toolbar>
+
+</ion-header> -->
+
+<ion-content [fullscreen]="false" style="background-color: #f8f8f8">
+  
+  <ion-grid>
+    <ion-row
+      style="text-align: center; background: #2dd36f00; border-radius: 5px"
+    >
+      <img
+        src="assets/layer-images.png"
+        style="position: fixed; top: 0; opacity: 0.2; width: 50px"
+      />
+
+      <img
+        src="assets/layer-images.png"
+        style="position: fixed; top: 0; right: 5px; opacity: 0.2; width: 29px"
+      />
+
+      <img
+        src="assets/layer-images.png"
+        style="
+          position: fixed;
+          top: 100;
+          left: 100px;
+          opacity: 0.2;
+          width: 99px;
+        "
+      />
+
+      <img
+        src="assets/layer-images.png"
+        style="position: absolute; top: 550px; left: 100px; width: 99px"
+      />
+
+      <img
+        src="assets/layer-images.png"
+        style="
+          position: absolute;
+          top: 500px;
+          left: 100px;
+          opacity: 0.5;
+          width: 29px;
+        "
+      />
+      <ion-col size="12">
+        <div
+          style="
+            position: absolute;
+            width: 100%;
+            height: 35%;
+            background-image: linear-gradient(to bottom, #f9be7c, #f5933a);
+            border-bottom-left-radius: 70px;
+          "
+        >
+          <p
+            style="
+              text-align: right;
+              color: #ffffff;
+              margin-bottom: 0px;
+              margin-top: 30%;
+              padding: 5px;
+              font-family: system-ui;
+            "
+          >
+            <b>BAOBAB SPORTS</b>
+          </p>
+          <h4
+            style="
+              text-align: right;
+              color: #ffffff;
+              margin-top: 5px;
+              margin-bottom: 50px;
+              padding: 5px;
+              font-family: system-ui;
+            "
+          >
+            <b> BAOBAB SKILL-LABS</b>
+          </h4>
+        </div>
+        <div
+          style="
+            text-align: center;
+            margin-left: -1px;
+            margin-bottom: -2px;
+            margin-top: 70%;
+          "
+        >
+          <div
+            class="loginTypeBtn loginBtn {{activeBtns}} {{colors}}"
+            (click)="setloginType('parent')"
+          >
+            <img
+              src="assets/students.png"
+              style="
+                border: 1px solid whitesmoke;
+                width: 50px;
+                border-radius: 20%;
+                padding: 5px;
+                box-shadow: 1px 1px 2px;
+              "
+            />
+            <br />
+            <span style="font-size: 18px; font-weight: bold">Student</span>
+          </div>
+          <div
+            class="loginTypeBtn {{activeBtnb}} {{colors}}"
+            (click)="setloginType('business')"
+          >
+            <img
+              src="assets/school.png"
+              style="
+                border: 1px solid whitesmoke;
+                width: 50px;
+                border-radius: 20%;
+                padding: 5px;
+                box-shadow: 1px 1px 2px;
+              "
+            />
+            <br />
+            <span style="font-size: 18px; font-weight: bold">Business</span>
+          </div>
+          <div
+            class="loginTypeBtn {{activeBtnt}} {{colors}}"
+            (click)="setloginType('trainer')"
+          >
+            <img
+              src="assets/personal.png"
+              style="
+                border: 1px solid whitesmoke;
+                width: 50px;
+                border-radius: 20%;
+                padding: 5px;
+                box-shadow: 1px 1px 2px;
+              "
+            />
+            <br />
+            <span style="font-size: 18px; font-weight: bold">Trainer</span>
+          </div>
+
+          <!-- <button  class="bottons {{activeBtns}}" style="color:white;width:33%;border-top-right-radius: 15px;background:#2DD36F;" (click)="setloginType('parent')" color="{{colors}}">Student</button>
+              <button style="background:#2DD36F;color:white;width:33%;border-top-left-radius: 15px;border-top-right-radius: 15px;" class="bottons {{activeBtnb}}" (click)="setloginType('business')" color="{{colorb}}">Business</button>
+              <button style="background:#2DD36F;color:white;width:33%;border-top-left-radius: 15px;" class="bottons {{activeBtnt}}" (click)="setloginType('trainer')"  color="{{colort}}">Trainer</button>
+               -->
+        </div>
+
+        <br />
+        <div>
+          <h4 class="heading" style="font-weight: 600; color: #f05d00">
+            {{heading}}
+          </h4>
+          <div class="content">
+            <div class="input-box" style=" position: relative;">
+              <span  style="margin-left: 27px;
+              position: relative;
+              left: 31px;">    <ion-icon
+                name="person"
+                color="danger"
+                size="small"
+               
+                slot="start"
+              ></ion-icon></span>
+              <input
+                type="text"
+                class="rounded"
+                tabindex="1"
+                [(ngModel)]="postData.username"
+                placeholder="Username"
+                autocomplete="off"
+              />
+
+          
+            </div>
+
+            <div class="input-box" style=" position: relative;">
+              <span  style="margin-left: 27px;
+              position: relative;
+              left: 31px;">       <ion-icon
+                name="lock-closed-outline"
+                color="danger"
+                size="small"
+         
+                slot="start"
+              ></ion-icon></span>
+              <input
+                type="password"
+                tabindex="2"
+                [(ngModel)]="postData.password"
+                class="rounded"
+                placeholder="Password"
+                autocomplete="off"
+              />
+          
+            </div>
+
+            <ion-row>
+              <ion-col style="text-align: center">
+                <button (click)="loginAction()" tabindex="3" class="button">
+                  <span>LOGIN </span>
+                </button>
+
+                <br />
+                <br />
+                <a
+                  [routerLink]="['/forgot-password']"
+                  class="small-text"
+                  style="text-decoration: none"
+                  >Forgot Password?</a
+                >
+              </ion-col>
+            </ion-row>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer style="position: fixed" [ngStyle]="{'top':deviceHeight}">
+  <ion-toolbar>
+    <ion-title
+      (click)="openurl('https://baobabrise.com/about/')"
+      size="small"
+      color="danger"
+      >Powered by-BAOBAB Rise Pvt Ltd</ion-title
+    >
+  </ion-toolbar>
+</ion-footer>

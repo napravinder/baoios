@@ -1,0 +1,26 @@
+<ion-header>  
+  <ion-toolbar>  
+    <ion-title size="small">Prayer Activity</ion-title>  
+    <ion-icon name='close-circle' (click)='dismiss()' style='float: right;'></ion-icon>  
+  </ion-toolbar>  
+</ion-header>  
+
+<ion-content>
+  <ion-item lines="full">
+    <ion-label position="floating" style="font-size:10px;float:right;">Remaining Time:{{reme}}</ion-label>
+  </ion-item> 
+  <ion-item lines="full">
+    <ion-label position="floating">Task Name*</ion-label>
+    <ion-input [(ngModel)]="modelData.taskname" name="taskname" type="text" required></ion-input>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label position="floating">Task Time(in min)*</ion-label>
+    <ion-input [(ngModel)]="modelData.tasktime" name="tasktime" type="number" required></ion-input>
+  </ion-item>
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="success" (click)="add()" expand="block">Add</ion-button>
+      
+    </ion-col>
+  </ion-row>
+</ion-content>

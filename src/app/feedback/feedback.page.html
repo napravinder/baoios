@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Feedback</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-grid>
+   <ion-row>
+     <ion-col class="text-center">
+      <img class="image-round" src="{{trainerImage}}">
+      <p>{{trainerName}}</p>
+     </ion-col>
+   </ion-row>
+   <ion-row>
+     <ion-col class="{{bad}}">
+      <img class="image-round text-center" src="assets/sad.svg">
+      <p class="p">Bad</p>
+     </ion-col>
+     <ion-col class="{{ok}}">
+      <img class="image-round text-center" src="assets/ok.svg">
+      <p class="p">Ok</p>
+
+     </ion-col>
+     <ion-col class="{{good}}"> 
+      <img class="image-round text-center" src="assets/confused.svg">
+      <p class="p">Good</p>
+       </ion-col>
+     <ion-col class="{{verygood}}">
+      <img class="image-round text-center" src="assets/smile.svg">
+      <p class="p">Very Good</p>
+     </ion-col>
+     <ion-col class="{{excellent}}">
+      <img class="image-round text-center" src="assets/happy.svg">
+      <p class="p">Excellent</p>
+     </ion-col>
+   </ion-row>
+   <ion-row>
+     <ion-col>
+      <ion-item >
+        <ion-label >Give Feedback</ion-label>
+        <ion-select [(ngModel)]="rate" (ionChange)="optionsFn()">
+          <ion-select-option value="1">Bad</ion-select-option>
+          <ion-select-option value="2">Ok</ion-select-option>
+          <ion-select-option value="3">Good</ion-select-option>
+          <ion-select-option value="4">Very Good</ion-select-option>
+          <ion-select-option value="5">Excellent</ion-select-option>
+        </ion-select>
+      </ion-item>
+     </ion-col>
+   </ion-row>
+ </ion-grid>
+
+  
+    
+  
+</ion-content>

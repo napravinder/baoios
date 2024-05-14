@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Improve your Skill</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-col
+      size="6"
+      class=""
+      *ngFor="let item of skill" button (click)="lessonDetail(item.id,item.classID,item.tid)"
+    >
+    <ion-card class="no-padding card" >
+      <img  src="{{item.image}}" class="img-card" >
+      
+      <ion-card-header>
+        <ion-card-subtitle class="text-10 title1"> {{item.lessonName}} </ion-card-subtitle>
+        <ion-card-title class="text-12">{{item.activityName}}</ion-card-title>
+     
+
+       
+      </ion-card-header>
+    
+    </ion-card>
+   
+    </ion-col>
+ 
+</ion-content>

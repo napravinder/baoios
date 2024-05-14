@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lesson Plan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content zooming="true">
+  <div style="position:fixed; top:100px;right:20px; z-index:99999">
+    <img src="assets/zoom.png" (click)="zoomIn()" style="width:25px">
+    <img src="assets/zoom-out.png" (click)="zoomOut()" style="width:25px">
+  </div>
+  <ion-grid class="main-icon">
+    <ion-row>
+      <ion-col size="12">
+        <div class="swiper-container">
+          <div class="swiper-wrapper" >
+            <div class="swiper-slide"  *ngFor="let s of sliderOne.slidesItems">
+              <img height="200px" width="100%" src="{{s.photo}}">
+            </div>
+           
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        
+
+        <!-- <ion-slides    pager="true" [options]="slideOptsOne" #slideWithNav  >
+          <ion-slide >
+           
+            
+          </ion-slide>
+        </ion-slides>  -->
+
+      </ion-col>
+
+    </ion-row>
+    <ion-row >
+      <ion-col size="12">
+      <h6 size="smaller" >Activity Videos</h6>
+      </ion-col>
+      <ion-col color="light" class="g" size="12" *ngFor="let item of videos">
+        <video controls="controls" preload="metadata"  controlsList="nodownload" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+          <source src="{{item.upvideo}}" type="video/mp4" />
+         </video>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+     
+        <table class="table">
+          <tr>
+            <th style="font-size:{{fontSize}}px" > Group Level</th>
+            <th style="font-size:{{fontSize}}px">Age Group</th>
+            <th style="font-size:{{fontSize}}px">Lesson Code</th>
+          </tr>
+          <tr>
+            <td style="font-size:{{fontSize}}px">{{levelName}}</td>
+            <td style="font-size:{{fontSize}}px">{{groupName}}</td>
+            <td style="font-size:{{fontSize}}px">{{lessonCode}}</td>
+          </tr>
+        </table>
+
+      </ion-col>
+      <ion-col size="12">
+        <table class="table">
+          <tr>
+            <th colspan="2" style="font-size:{{fontSize}}px">Activity Details</th>
+          </tr>
+          <tr>
+            <td class="bg-green" style="font-size:{{fontSize}}px">Activity Name</td>
+            <td style="font-size:{{fontSize}}px">{{activityName}}</td>
+          </tr>
+          <tr>
+            <td class="bg-green" style="font-size:{{fontSize}}px">Lesson Intro</td>
+            <td style="font-size:{{fontSize}}px">{{lessonIntro}}</td>
+          </tr>
+          <tr>
+            <td class="bg-green" style="font-size:{{fontSize}}px">Unit Used</td>
+            <td style="font-size:{{fontSize}}px">{{unitUsed}}</td>
+          </tr>
+        </table>
+      </ion-col>
+      <ion-col size="12">
+        <div class="scrollabel">
+        <table class="table">
+          <tr>
+            <th colspan="2" style="font-size:{{fontSize}}px">Skill Development</th>
+          </tr>
+          <tr>
+            <td class="bg-green" style="font-size:{{fontSize}}px">Warm Up</td>
+            <td >
+              <div style="font-size:{{fontSize}}px" [innerHTML]=warmup></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="bg-green" style="font-size:{{fontSize}}px">Activity Details</td>
+            <td>
+              <div style="font-size:{{fontSize}}px" [innerHTML]=activityDetail></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="bg-green" style="font-size:{{fontSize}}px">Activity Time</td>
+            <td style="font-size:{{fontSize}}px">
+              {{activityTime}}
+
+            </td>
+          </tr>
+
+          <tr>
+            <td class="bg-green" style="font-size:{{fontSize}}px">Activity Benefits</td>
+            <td><div style="font-size:{{fontSize}}px" [innerHTML]=activityBenefits></div> </td>
+          </tr>
+          <tr>
+            <td class="bg-green" style="font-size:{{fontSize}}px">Cool Down</td>
+            <td>
+              <div style="font-size:{{fontSize}}px" [innerHTML]=coolDown></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="bg-green" style="font-size:{{fontSize}}px">Home Work</td>
+            <td>
+
+              <div style="font-size:{{fontSize}}px" [innerHTML]=homeWork></div>
+            </td>
+          </tr>
+          <tr>
+            <td class="bg-green" style="font-size:{{fontSize}}px">safety</td>
+            <td>
+              <div style="font-size:{{fontSize}}px" [innerHTML]=homeWork></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      </ion-col>
+       
+    </ion-row>
+    
+    </ion-grid>
+
+    
+</ion-content>

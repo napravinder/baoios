@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Training Session</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col
+      size="6"
+      class=""
+      *ngFor="let item of training" button (click)="trainingDetail(item.id,item.images,item.title,item.cdate,item.des,item.link)"
+    >
+    <ion-card class="no-padding card" >
+      <img  src="{{item.images}}" class="img-card" >
+      
+      <ion-card-header>
+        <ion-card-subtitle class="text-10 title1"> {{item.cdate}}  <ion-button class="text-10 " horizontal="end" color="{{item.color}}"     (click)="lessonStatus($event,item.id,item.activityTStatus)" >{{item.activityTStatus}}</ion-button></ion-card-subtitle>
+        <ion-card-title class="text-12">{{item.title}}</ion-card-title>
+     
+
+       
+      </ion-card-header>
+    
+    </ion-card>
+   
+    </ion-col>
+  </ion-row>
+
+
+</ion-content>

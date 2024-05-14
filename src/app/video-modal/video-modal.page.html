@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Video</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <video controls="controls" preload="metadata"  controlsList="nodownload" autoplay="autoplay" webkit-playsinline="webkit-playsinline" class="videoPlayer">
+    <source src="{{url}}" type="video/mp4" />
+   </video>
+</ion-content>

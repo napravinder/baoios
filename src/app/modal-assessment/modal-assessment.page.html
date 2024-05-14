@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>  
+    <ion-title>Add Assessment</ion-title>  
+    <ion-icon name='close-circle' (click)='dismiss()' style='float: right;'></ion-icon>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Select Class</ion-label>
+    <ion-select placeholder="Select"  [(ngModel)]="class_id" >
+      <ion-select-option *ngFor="let item of className" value="{{item.id}}">{{item.className}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label>Select Type</ion-label>
+    <ion-select placeholder="Select Type"  [(ngModel)]="gotype" (ionChange)="openurl()">
+      <ion-select-option value="fitness" >Fitness</ion-select-option>
+      <ion-select-option value="skill">Skill</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-content>

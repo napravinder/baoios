@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Admission From</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form >
+    <ion-item lines="full">
+      <ion-label position="floating">Student Name</ion-label>
+      <ion-input type="text" [(ngModel)]="postData.studentName" name="studentName" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Father Name</ion-label>
+      <ion-input [(ngModel)]="postData.fatherName" name="fatherName" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Mother Name</ion-label>
+      <ion-input [(ngModel)]="postData.motherName" name="motherName" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">DOB</ion-label>
+      <ion-input [(ngModel)]="postData.dob" name="dob" type="date" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Phone Number</ion-label>
+      <ion-input [(ngModel)]="postData.phone" name="phone" type="text" required></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Address</ion-label>
+      <ion-textarea [(ngModel)]="postData.address" name="address" required></ion-textarea>
+      
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" (click)="saveData()" expand="block">Submit</ion-button>
+        
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

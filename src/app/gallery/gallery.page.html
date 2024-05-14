@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>gallery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  
+  <ion-accordion-group #accordionGroup>
+
+    <ion-accordion *ngFor="let classname of className; let i = index;" value={{i}}>
+      <ion-item slot="header" color="light">
+        <ion-label>{{ classname.className }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <ion-row>
+          <ng-container *ngIf="filterImagesByClass(classname.id).length>0; else staticImages">
+       
+          <ion-col size="6" *ngFor="let img of filterImagesByClass(classname.id).slice(0, 4)">
+         
+            <img (click)="openPreview(img.image)" style="width: 50px; height: 50px; border-radius: 5px;" src="https://baobabsports.com/baosport/gallery_images/{{img.image}}" />
+          </ion-col>
+        </ng-container>
+        <ng-template #staticImages>
+  
+          <ion-col size="12" >
+         
+            <img  style="width: 100%; height: 100%; border-radius: 5px;" src="./assets/noimage.png" />
+          </ion-col>
+         
+        </ng-template>
+  
+        </ion-row>
+
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+ 
+  <ion-row>
+    <ion-col
+      size="6"
+      *ngFor="let img of images; let i = index;"
+      class="ion-text-center"
+    >
+      <img  (click)="openPreview(img.image)" style="width:100%;height:110px;" src="https://baobabsports.com/baosport/gallery_images/{{img.image}}" />
+    </ion-col>
+  </ion-row>
+
+  
+ 
+</ion-content>

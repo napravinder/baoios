@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title size="small">Assessment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-list inset *ngIf="checkdata">
+    <ion-list-header size="small">Select Month</ion-list-header>
+    <ion-item class="b" button *ngFor="let item of month;let i = index" (click)="assessmentDetail(item.month)">
+
+      <ion-label> {{item.month}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-list inset *ngIf="checkdata==false">
+    <ion-list-header size="small">Select Month</ion-list-header>
+    <ion-item class="b">
+
+      <ion-label> No data</ion-label>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

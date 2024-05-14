@@ -1,0 +1,42 @@
+.image-round{
+    width: 100px;
+    border-radius: 50%;
+    align-items: center;
+}
+.text-center{
+    text-align: center;
+}
+.bad{
+    border-bottom: 2px solid red;
+    margin-left: 1px;
+    
+}
+.ok{
+    border-bottom: 2px solid #E66C17;
+    margin-left: 1px;
+}
+.verygood{
+    border-bottom: 2px solid #8CF192;
+    margin-left: 1px;
+}
+.good{
+    border-bottom: 2px solid #FFD93B;
+    margin-left: 1px;
+}
+.excellent{
+    border-bottom: 2px solid #0B9E13;
+    margin-left: 1px;
+}
+.notactive{
+    border-bottom: 2px solid #a0a1a0;
+    margin-left: 1px;
+}
+.p{
+text-align: center;
+margin: 2px;
+font-size: 8px;
+}
+.bg-primary{
+    background-color: royalblue;
+    color:whitesmoke;
+}
